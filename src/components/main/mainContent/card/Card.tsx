@@ -28,9 +28,11 @@ export default function Card({ id, imgUrl, category, title }: Props) {
 	};
 
 	const handleCategoryClick = (e: React.SyntheticEvent, category: TSelected) => {
+		
 		e.stopPropagation();
 		dispatch(changeSelected(category));
 		dispatch(fetchImages({ numberImg: 9, type: category }));
+
 	};
 
 	return (
