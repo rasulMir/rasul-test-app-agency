@@ -6,7 +6,7 @@ export interface IinitialState {
 	data: IData[],
 }
 
-export type TSelected = 'all' | "photo" | "illustration" | "vector" | string;
+export type TSelected = 'all' | 'photo' | 'illustration' | 'vector/ai' | 'vector/svg' | string;
 
 export interface IResponseData {
 	total: number;

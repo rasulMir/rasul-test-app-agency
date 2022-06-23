@@ -22,11 +22,13 @@ export default function Card({ id, imgUrl, category, title }: Props) {
 	const [cardClicked, setCardClicked] = React.useState<boolean>(false);
 	const dispatch = useAppDispatch();
 
-	const handleDelete = (id: number) => {
+	const handleDelete = (e: React.SyntheticEvent, id: number) => {
+		e.stopPropagation();
 		dispatch(deleteItem(id));
 	};
 
-	const handleCategoryClick = (category: TSelected) => {
+	const handleCategoryClick = (e: React.SyntheticEvent, category: TSelected) => {
+		e.stopPropagation();
 		dispatch(changeSelected(category));
 		dispatch(fetchImages({ numberImg: 9, type: category }));
 	};
@@ -38,12 +40,12 @@ export default function Card({ id, imgUrl, category, title }: Props) {
 			<img src={imgUrl} alt="" className="card__img" />
 			<div className="card__btns">
 				<button className="card__btn" 
-					onClick={() => handleCategoryClick(category)}
+					onClick={(e) => handleCategoryClick(e, category)}
 				>
 					{ category }
 				</button>
 				<button className="card__btn card__btn_red"
-					onClick={() => handleDelete(id)}
+					onClick={(e) => handleDelete(e, id)}
 				>
 					delete
 				</button>

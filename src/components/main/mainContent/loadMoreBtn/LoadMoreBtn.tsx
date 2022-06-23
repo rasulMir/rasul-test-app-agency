@@ -1,4 +1,6 @@
 import React from 'react';
+
+// redux
 import { fetchImages } from '../../../../redux/agencySlice';
 import { useAppDispatch, useAppSelector } from '../../../../redux/hooks';
 

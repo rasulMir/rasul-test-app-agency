@@ -2,15 +2,15 @@ import { createSlice, createAsyncThunk, PayloadAction  } from '@reduxjs/toolkit'
 import { IinitialState, IResponseData, TSelected } from './reduxTypes';
 
 interface IFetchProps {
-	numberImg: number;
+	numberImg?: number;
 	type: string;
 }
 
 export const fetchImages = createAsyncThunk(
 	'all/fetchAll',
-	async function ({ numberImg, type }: IFetchProps, { rejectWithValue }) {
+	async function ({ numberImg,  type }: IFetchProps, { rejectWithValue }) {
 		try {
-			const response = await fetch(`https://pixabay.com/api/?key=28196625-24be365714fc979df28854a7f&q=yellow&image_type=${type}&per_page=${numberImg}`);
+			const response = await fetch(`https://pixabay.com/api/?key=28196625-24be365714fc979df28854a7f&q=yellow+background&image_type=${type}&per_page=${numberImg}`);
 			const data = (await response.json()) as IResponseData;
 
 			return data.hits;
@@ -45,6 +45,7 @@ const agencySlice = createSlice({
 	reducers: {
 		changeSelected (state, payload: PayloadAction<TSelected>) {
 			state.selected = payload.payload;
+			state.data = [];
 		},
 
 		deleteItem (state, { payload }: PayloadAction<number>) {

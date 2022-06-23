@@ -16,6 +16,10 @@ import Loader from '../loader/Loader';
 
 interface Props {}
 
+function checkType(type: string) {
+	return type === 'vector/ai' || type === 'vector/svg' ? 'vector' : type;
+}
+
 export default function MainContent({}: Props) {
 	
 	const dispatch = useAppDispatch();
@@ -40,7 +44,7 @@ export default function MainContent({}: Props) {
 						key={i.userImageURL}
 						id={i.id}
 						imgUrl={i.webformatURL}
-						category={i.type}
+						category={checkType(i.type)}
 						title={i.user}
 					/>
 				))

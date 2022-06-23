@@ -6,12 +6,13 @@ import { useAppDispatch, useAppSelector } from '../../../redux/hooks';
 
 // redux
 import { changeSelected, fetchImages } from '../../../redux/agencySlice';
+import { TSelected } from '../../../redux/reduxTypes';
 
 // styles
 import './Filter.scss';
 
 interface ICategory {
-	category: 'all' | "photo" | "illustration" | "vector";
+	category: TSelected;
 	text: string;
 }
 
@@ -53,7 +54,7 @@ export default function Filter({}: Props) {
 		setIsOpen(!isOpen);
 	};
 
-	const selectedClickHandle = (e: React.SyntheticEvent, item: 'all' | "photo" | "illustration" | "vector") => {
+	const selectedClickHandle = (e: React.SyntheticEvent, item: TSelected) => {
 		e.stopPropagation();
 		dispatch(changeSelected(item));
 		dispatch(fetchImages({ numberImg: 9, type: item }));
