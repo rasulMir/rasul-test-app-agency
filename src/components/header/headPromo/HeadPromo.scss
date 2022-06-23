@@ -1,0 +1,26 @@
+.header-promo {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+
+	&__title {
+		margin: 0 0 20px 0;
+		font-size: 72px;
+	}
+
+	&__txt {
+		font-size: 16px;
+		line-height: 2em;
+		margin: 0;
+	}
+}
+
+@media screen and (min-width: 1040px) {
+	.header-promo {
+		&__title {
+			margin: 0 0 34px 0;
+		}
+	}
+}

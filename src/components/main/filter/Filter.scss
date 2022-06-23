@@ -1,0 +1,104 @@
+@import '../../../assets/scss/variables.scss';
+
+.filter-wrap {
+	position: relative;
+	font-size: 16px;
+	text-transform: capitalize;
+	padding: .75em 1em;
+	margin: 0 0 48px 0;
+	border: 1px solid $filterBorderColor;
+	border-radius: 6px;
+	background-color: $BgWhite;
+	cursor: pointer;
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		right: .75em;
+		transform: translateY(-50%);
+		border-width: 8px 5px 0 5px;
+		border-style: solid;
+		border-color: $filterBorderColor transparent transparent transparent;
+		transition: all .3s linear;
+	}
+
+	&_active {
+		&::after {
+			transform: translateY(-50%) rotateZ(180deg);
+		}
+	}
+}
+
+.filter-menu {
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 106%;
+	left: 0;
+	width: 100%;
+	background-color: $BgWhite;
+	color: $filterFontColor;
+	opacity: 0;
+	z-index: -5;
+	transition: all .3s linear;
+
+	&__item {
+		list-style-type: none;
+		padding: .75em;
+		text-align: center;
+		color: #000;
+		cursor: pointer;
+
+		&:not(:last-of-type) {
+			border-bottom: 1px solid $filterBorderColor;
+		}
+	}
+
+	&_active {
+		opacity: 1;
+		z-index: 10;
+	}
+}
+
+@media  screen and (min-width: 1040px) {
+	.filter-wrap {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: .25em;
+		border: none;
+		background-color: transparent;
+		cursor: auto;
+
+		&::after {
+			display: none;
+		}
+	}
+
+	.filter-menu {
+		flex: 0 0 563 / 1170 * 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		position: static;
+		width: auto;
+		background-color: transparent;
+		color: $filterFontColor;
+		opacity: 1;
+		z-index: auto;
+
+		&__item {
+			padding: 0;
+			color: inherit;
+
+			&_active {
+				color: $filterSelectedFontColor;
+			}
+
+			&:not(:last-of-type) {
+				border-bottom: none;
+			}
+		}
+	}
+}

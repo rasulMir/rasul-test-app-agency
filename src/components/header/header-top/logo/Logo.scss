@@ -1,0 +1,9 @@
+.logo {
+	flex: 0 0 60%;
+}
+
+@media screen and (min-width: 1040px) {
+	.logo {
+		flex: 0 0 26%;
+	}
+}

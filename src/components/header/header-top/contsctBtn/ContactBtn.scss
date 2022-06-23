@@ -1,0 +1,21 @@
+@import '../../../../assets//scss/variables.scss';
+
+.head-nav__contact-btn {
+	display: block;
+	padding: 1em 2.6em;
+	font-size: 14px;
+	text-decoration: none;
+	color: $txtWhite;
+	background-color: transparent;
+	border-radius: .45em;
+	border: 1px solid $borderWhite;
+}
+
+@media screen and (min-width: 1040px) {
+	.head-nav__contact-btn {
+		&:hover {
+			transition: background .3s linear;
+			background-color: rgba(0, 0, 0, .3);
+		}
+	}
+}

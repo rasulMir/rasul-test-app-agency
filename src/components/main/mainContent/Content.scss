@@ -1,0 +1,17 @@
+@import '../../../assets/scss/variables.scss';
+
+.main-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: stretch;
+}
+
+@media screen and (min-width: 600px) {
+	.main-content {
+		flex-direction: row;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+
+}

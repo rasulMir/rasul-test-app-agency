@@ -1,0 +1,13 @@
+@import '../../assets/scss/variables.scss';
+
+.header {
+	background-color: $BgBlue;
+	padding: 10px 0 80px;
+	color: $txtWhite;
+}
+
+@media screen and (min-width: 1040px) {
+	.header {
+		padding: 16px 0 60px;
+	}
+}

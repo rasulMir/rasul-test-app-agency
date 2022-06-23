@@ -1,0 +1,20 @@
+@import '../../../../assets/scss/variables.scss';
+
+.load-more-btn-wrap {
+	padding: 80px 0 0 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.load-more {
+	text-transform: capitalize;
+	font-size: 14px;
+	background-color: $BgWhite;
+	padding: 1em 3em;
+	border-radius: .4em;
+	border: none;
+	cursor: pointer;
+	box-shadow: 0 0 2px 1px #707070;
+}

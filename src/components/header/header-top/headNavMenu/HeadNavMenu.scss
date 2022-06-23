@@ -1,0 +1,49 @@
+@import '../../../../assets/scss/variables.scss';
+
+.head-nav {
+	&__menu {
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		font-size: 14px;
+		color: $txtWhite;
+		margin: 0 0 20px 0;
+	}
+	
+	&__item {
+		list-style-type: none;
+	}
+
+	&__link {
+		display: block;
+		padding: 15px 5px;
+		text-align: center;
+		text-decoration: none;
+		color: $txtWhite;
+		transition: all .3s linear;
+
+		&:hover {
+			background-color: rgba(0,0,0, .4);
+		}
+	}
+}
+
+@media screen and (min-width: 1040px) {
+	.head-nav {
+		&__menu {
+			flex: 0 0 522 / 845 * 100%;
+			margin: 0;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+	
+		&__item {
+			list-style-type: none;
+		}
+	
+		&__link {
+			padding: 0 10px;
+		}
+	}
+}

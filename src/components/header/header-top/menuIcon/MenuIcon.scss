@@ -1,0 +1,49 @@
+@import '../../../../assets/scss/variables.scss';
+
+.menu-icon {
+	width: 30px;
+	height: 24px;
+	position: relative;
+	margin: 0 15px 0 0;
+	cursor: pointer;
+	z-index: 15;
+
+	& > span {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	& > span,
+	&::before, 
+	&::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		width: 100%;
+		height: 3px;
+		background-color: $BgWhite;
+		transition: all .3s linear;
+	}
+	&::before {
+		transform-origin: right;
+		top: 0;
+	}
+	&::after {
+		transform-origin: right;
+		bottom: 0;
+	}
+
+	&_active {
+	
+		& > span {
+			opacity: 0;
+		}
+		&::before {
+			transform: rotateZ(-45deg);
+		}
+		&::after {
+			transform: rotateZ(45deg);
+		}
+	}
+}
