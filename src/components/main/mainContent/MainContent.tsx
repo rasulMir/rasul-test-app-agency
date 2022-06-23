@@ -41,7 +41,7 @@ export default function MainContent({}: Props) {
 			{
 				data.map(i => (
 					<Card 
-						key={i.userImageURL}
+						key={i.id}
 						id={i.id}
 						imgUrl={i.webformatURL}
 						category={checkType(i.type)}
